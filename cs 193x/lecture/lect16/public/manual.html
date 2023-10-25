@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Manual Login | Lecture 16</title>
+
+    <!-- This line provides automatic page and style reloading when files change -->
+    <script type="module" src="/lib/client/updater.js"></script>
+
+    <script type="module" src="manual.js"></script>
+  </head>
+  <body>
+    <h1>Manual Login Example</h1>
+    <form id="loginForm">
+      <p><label>Email: <input type="email" id="email" required></label></p>
+      <p><label>Password: <input type="password" id="password" required></label></p>
+      <button type="submit" id="login">Login</button>
+    </form>
+    <p><button id="protected">Protected request</button></p>
+  </body>
+</html>

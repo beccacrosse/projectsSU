@@ -1,0 +1,49 @@
+:root {
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: inherit;
+}
+
+.scaled-text {
+  font-size: large;
+}
+
+.fixed-text {
+  font-size: 20px;
+}
+
+.container {
+  display: flex;
+  /* Change the font size to see its effect */
+  font-size: 32px;
+}
+
+.fixed-box {
+  border: 2px solid black;
+  width: 192px;
+  height: 80px;
+  margin: 16px;
+  padding: 4px;
+}
+
+.scaled-box {
+  border: 0.125em solid black;
+  width: 12em; /* 12 * font size */
+  height: 5em; /* 5 * font size */
+  margin: 1em; /* 1 * font size*/
+  padding: 0.25em;
+}
+
+.rem-box {
+  border: 2px solid black;
+  padding: 2rem;
+}
+
+.viewport-height {
+  border: 2px solid black;
+  /* width: 50%; % of width is %of the container. only works with width*/
+  /*height: 50 vh; view height? size of the browser*/
+}
+

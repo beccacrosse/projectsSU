@@ -1,0 +1,41 @@
+Put your answers to the debugging questions from Problem One in this file.
+
+Q1:
+numDisks: 5
+start: 'A'
+finish: 'C'
+temp: 'B'
+totalMoves: 4546550
+
+
+Q2:
+found in file: TowersOfHanoiGUI.cpp
+under function named: makeTheMagicHappen()
+
+
+Q3:
+It took 31 moves to complete
+
+
+Q4:
+the value of totalMoves is 15
+
+
+Q5:
+
+2 characters triggers an error
+
+Q6:
+The extra character was a "=" in
+Set<string> thisOption = permutationsRec(remaining, chosen + ch); on line 41
+
+
+Q7:
+This equals sign causes an error in the program because the
+x += y function is used to alter x while + makes a new value of x+y.
+Because this code is taking place within a for loop, this means that
+the value for chosen, and therefore the input into the recursive function
+is getting manipulated to include more and more items (+ char) each time
+around the loop. This is why, for the first iteration of the for loop,
+the output is correct, but after that additional characters start to appear
+in the output

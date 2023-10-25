@@ -1,0 +1,177 @@
+test> show dbs
+admin   40.00 KiB
+config  60.00 KiB
+local   72.00 KiB
+
+test> use example
+switched to db example
+
+example> show dbs
+admin   40.00 KiB
+config  60.00 KiB
+local   72.00 KiB
+
+example> show collections
+
+
+example> db.myCollection.insertOne({ binky: "Hello, world", num: 193 })
+{
+  acknowledged: true,
+  insertedId: ObjectId("6466a846a5da1ef7f222ff06")
+}
+
+example> show collections
+myCollection
+
+example> show dbs
+admin    40.00 KiB
+config   60.00 KiB
+example   8.00 KiB
+local    72.00 KiB
+
+example> db.myCollection.find()
+[
+  {
+    _id: ObjectId("6466a846a5da1ef7f222ff06"),
+    binky: 'Hello, world',
+    num: 193
+  }
+]
+
+example> db.myCollection.findOne({ num: 193 })
+{
+  _id: ObjectId("6466a846a5da1ef7f222ff06"),
+  binky: 'Hello, world',
+  num: 193
+}
+
+example> db.myCollection.findOne({ num: 200 })
+null
+
+example> db.myCollection.insertMany([
+... { binky: "Winky", num: 200 },
+... { num: 42, foobar: "blahblah" }
+... ])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId("6466a978a5da1ef7f222ff07"),
+    '1': ObjectId("6466a978a5da1ef7f222ff08")
+  }
+}
+
+example> db.myCollection.find()
+[
+  {
+    _id: ObjectId("6466a846a5da1ef7f222ff06"),
+    binky: 'Hello, world',
+    num: 193
+  },
+  {
+    _id: ObjectId("6466a978a5da1ef7f222ff07"),
+    binky: 'Winky',
+    num: 200
+  },
+  {
+    _id: ObjectId("6466a978a5da1ef7f222ff08"),
+    num: 42,
+    foobar: 'blahblah'
+  }
+]
+
+example> db.myCollection.find({ num: 200 })
+[
+  {
+    _id: ObjectId("6466a978a5da1ef7f222ff07"),
+    binky: 'Winky',
+    num: 200
+  }
+]
+
+example> db.myCollection.find({ num: { $gt: 100 } })
+[
+  {
+    _id: ObjectId("6466a846a5da1ef7f222ff06"),
+    binky: 'Hello, world',
+    num: 193
+  },
+  {
+    _id: ObjectId("6466a978a5da1ef7f222ff07"),
+    binky: 'Winky',
+    num: 200
+  }
+]
+
+example> db.myCollection.replaceOne({ num: 193 }, { num: 193, binky: "Pinky" })
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+
+example> db.myCollection.find()
+[
+  {
+    _id: ObjectId("6466a846a5da1ef7f222ff06"),
+    num: 193,
+    binky: 'Pinky'
+  },
+  {
+    _id: ObjectId("6466a978a5da1ef7f222ff07"),
+    binky: 'Winky',
+    num: 200
+  },
+  {
+    _id: ObjectId("6466a978a5da1ef7f222ff08"),
+    num: 42,
+    foobar: 'blahblah'
+  }
+]
+
+example> db.myCollection.updateMany({ num: { $gt: 100 } }, { $set: { name: "Michael" } })
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 2,
+  modifiedCount: 2,
+  upsertedCount: 0
+}
+
+example> db.myCollection.find()
+[
+  {
+    _id: ObjectId("6466a846a5da1ef7f222ff06"),
+    num: 193,
+    binky: 'Pinky',
+    name: 'Michael'
+  },
+  {
+    _id: ObjectId("6466a978a5da1ef7f222ff07"),
+    binky: 'Winky',
+    num: 200,
+    name: 'Michael'
+  },
+  {
+    _id: ObjectId("6466a978a5da1ef7f222ff08"),
+    num: 42,
+    foobar: 'blahblah'
+  }
+]
+
+example> db.myCollection.deleteOne({ num: 42 })
+{ acknowledged: true, deletedCount: 1 }
+
+example> db.myCollection.deleteMany({ binky: "Pinky" })
+{ acknowledged: true, deletedCount: 1 }
+
+example> db.myCollection.find()
+[
+  {
+    _id: ObjectId("6466a978a5da1ef7f222ff07"),
+    binky: 'Winky',
+    num: 200,
+    name: 'Michael'
+  }
+]

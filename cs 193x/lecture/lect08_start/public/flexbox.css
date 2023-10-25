@@ -1,0 +1,39 @@
+:root {
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: inherit;
+}
+
+div {
+  margin: 5px;
+}
+
+.outer { /* flex container*/
+  border: 2px solid black;
+  width: 400px;
+  height: 200px;
+  display: flex;
+  /*flex-direction: column; default: felx-direction: row;. flex-direction is main axis, other direction cross axis is align-items */
+  align-items: center;
+  /*align-items: flex-end;*/
+
+}
+/*inner boxes are flex items*/
+
+.outer div { /* every div inside of a box outer/ everything with class div and outer*/
+  background-color: lightgray;
+  border: 2px solid blue;
+  width: 50px;
+  height: 50px;
+}
+
+.between {
+  justify-content: flex-end; /* content to the right of the flex box's end*/
+  justify-content: space-between;
+}
+
+.around {
+  justify-content: space-around;
+}

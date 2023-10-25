@@ -1,0 +1,49 @@
+:root { /* root element (html) */
+  box-sizing: border-box;
+}
+
+* { /* inherit box-sizing from parent */
+  box-sizing: inherit;
+}
+
+.outer {
+  border: 2px dashed black;
+  width: 404px;
+  height: 204px;
+  margin: 10px;
+}
+
+.outer div, .outer span {
+  background-color: rgb(255, 205, 235);
+  border: 2px solid rgb(219, 105, 156);
+  margin: 5px;
+}
+
+.outer {
+  display: flex;
+  /*flex-direction: column;*/
+  justify-content: space-between;
+}
+
+.first {
+  flex-grow: 1; /* default is flex-grow 0, flex-grow 2 take sup double remaining space*/
+}
+
+.second {
+  flex-grow: 1; /* tells it to takes up remaining space. flex-grow applies to item not container*/
+}
+
+/* .first, .second,.third {*/
+.grow > div { /* divs that are direct children of .grow*/
+  flex-grow: 1;
+}
+
+.small {
+  flex-shrink:0; /*not allowd to take space from this, keep size*/
+}
+
+.wrap { /* wrap conainer*/
+  flex-wrap: wrap;
+  gap: 20px; /* basically a margin between items*/
+  flex-direction: column;
+}

@@ -1,0 +1,6 @@
+db = connect("cs193x_assign3");
+db.dropDatabase();
+db.users.insertOne({ id: "DailyJournal", name: "Thoughtful", avatarURL: "images/stanford.png", color: "honeydew" });
+db.posts.insertOne({ userId: "DailyJournal", time: new Date(), text: "I'm feeling great today!" });
+db.users.insertOne({ id: "DreamJournal", name: "sleepy", avatarURL: "images/stanford.png", color: "lavendar" });
+db.posts.insertOne({ userId: "DreamJournal", time: new Date(), text: "Dreampt about elmo again.... I'm getting worried" });

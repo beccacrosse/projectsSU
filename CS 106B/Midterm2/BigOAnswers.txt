@@ -1,0 +1,39 @@
+The big-O time complexity of the function...
+
+... iterativePrinting is O(n^2),
+    and I know this because...
+    The run time is growing at a linear rate as n grows
+
+
+
+
+
+... iterativePQ is O(nlogn),
+    and I know this because...
+    The run time is growing at a linear rate as n grows
+
+
+
+
+... iterativeHashSet is O(n),
+    and I know this because...
+
+
+
+
+
+... iterativeLooping is O(1),
+    and I know this because...
+
+
+
+
+
+... iterativeVector is O(logn),
+    and I know this because...
+
+
+
+
+
+

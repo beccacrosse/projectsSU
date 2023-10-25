@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Unit Converter | Lecture 4</title>
+
+    <!-- This line provides automatic page and style reloading when files change -->
+    <script type="module" src="/lib/client/updater.js"></script>
+
+    <script type="module" src="converter.js"></script>
+  </head>
+  <body>
+    <h1>Unit Converter</h1>
+    <form id="converter">
+      <label>US customary: always put inputs in a label <3 <input type="number" id="us"></label><br>
+      <label for="metric">Metric: you can also use an id to add input to a label</label><input type="number" id="metric"><br>
+      <button type="button" id="convert">in. &rarr; cm</button>
+    </form>
+  </body>
+</html>

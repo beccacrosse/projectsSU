@@ -1,0 +1,204 @@
+Q1:
+
+0: .
+1: 31
+2: 41
+3: 53
+4: 93
+5: .
+6: 26
+7: 97
+8: 58
+9: 59
+
+
+
+Q2:
+
+0: .
+1: 41
+2: 31
+3: 53
+4: 93
+5: .
+6: 26
+7: 97
+8: 58
+9: 59
+
+
+
+Q3:
+
+slots 2, 3, 4, and 5
+
+
+
+Q4:
+
+slots 7, 8, 9, and 0
+
+
+Q5:
+
+0: .
+1: 31
+2: T
+3: T
+4: 93
+5: .
+6: 26
+7: 97
+8: 58
+9: 59
+
+
+Q6:
+0: 106
+1: 31
+2: 107
+3: 110
+4: 93
+5: .
+6: 26
+7: 97
+8: 58
+9: 59
+
+
+
+Q7:
+
+0: 108; 2
+1: 151; 0
+2: 221; 1
+3: 103; 0
+4: --
+5: 145; 0
+6: 245; 1
+7: 246; 1
+8: 106; 2
+9: 107; 2
+
+
+
+Q8:
+
+0: 108; 2
+1: 151; 0
+2: 221; 1
+3: 103; 0
+4: --
+5: 145; 0
+6: 245; 1
+7: 106; 1
+8: 246; 2
+9: 107; 2
+
+
+
+Q9:
+
+Slots 5, 6, and 7
+
+Q10:
+
+Slot 0
+
+
+Q11:
+
+
+0: 108; 2
+1: 221; 0
+2: --
+3: 103; 0
+4: --
+5: 145; 0
+6: 245; 1
+7: 246; 1
+8: 106; 2
+9: 107; 2
+
+Q12:
+
+0: --
+1: 221; 0
+2: --
+3: 103; 0
+4: --
+5: 245; 0
+6: 246; 0
+7: 106; 1
+8: 107; 1
+9: 108; 1
+
+Q13:
+
+failure is a little more than half the success for insert and remove
+this is because if something is unable to be inserted/ removed the program
+stops earlier and does less work.
+
+for lookups it is close to the same amount of work but success takes more time
+time because the program stops earlier if the looked up element's slot can't be found
+but if it's slot is found, the true location still needs to be found within the slot
+
+numbers for the failures grew much slower with higher α than successes
+
+Q14:
+
+failure is a more than half the success for insert and remove
+this is because if something is unable to be inserted/ removed the program
+stops earlier and does less work but there is less additional work to do
+than with chain hashing.
+
+for lookups success takes less time than failure because the program stops
+earlier if the looked up element is found. As α gets bigger, the time for
+failure gets a lot bigger. This is because as the table becomes more filled,
+every slot must be checked so much more work is done
+
+Q15:
+
+failure is a little more than half the success for insert a but the failure
+becomes comparatively smaller than success as α gets bigger. This is becuase
+the greater number of slots in use, the more work is avoided if the program
+quits early due to it being unable to insert.
+
+for remove the failure is less than half the ns of successes.
+this is because if something is unable to be inserted/ removed the program
+stops earlier and does less work.
+
+for lookups it is close to the same amount of work but success takes less
+time because the program stops if the looked up element is found as opposed
+to searching every element
+
+Q16:
+
+
+Insert (success): linear
+Insert (failure): linear
+Lookup (success): linear
+Lookup (failure): robinhood hashing
+Remove (success): linear hashing
+Remove (failure): robinhood hashing
+
+the efficiency for both implementations is about the sane at higher levels of alpha besides lookup
+and remove failure for which robinhood is much more efficient. This is because robinhood's distance feature
+allows it to terminate depending on the distance of an element as opposed to the other implementations which must
+run until every element has been searched. This saves drastically more energy and time as larger amounts of elements are added.
+
+
+Q17:
+
+a α of .01 would take up too much space
+
+
+Q18:
+
+
+
+
+
+
+
+

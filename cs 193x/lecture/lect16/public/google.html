@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Google Login | Lecture 16</title>
+
+    <!-- This line provides automatic page and style reloading when files change -->
+    <script type="module" src="/lib/client/updater.js"></script>
+
+    <!-- Have to use a script tag (can't import) because of Google's security policy) -->
+    <script src="https://accounts.google.com/gsi/client" defer></script>
+    <script type="module" src="google.js"></script>
+  </head>
+  <body>
+    <h1>Google Login Example</h1>
+    <form id="loginForm">
+      <div id="signin"></div>
+    </form>
+    <p><button id="protected">Protected request</button></p>
+  </body>
+</html>

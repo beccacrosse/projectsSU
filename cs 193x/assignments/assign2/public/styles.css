@@ -1,0 +1,77 @@
+:root {
+  box-sizing: border-box;
+}
+
+/* Change the font size of all <input>, <button>, and <textarea> elements so it is the same as normal text..*/
+input, button, textarea {
+  /*font-size: 1 rem;  if not, 1 rem */
+  font-size: 1rem;
+  font-family: inherit;
+
+}
+
+/*Also change <texe same font family as the rest of the page (at least on some browsers/OSes, it defaults to a monospace font)*/
+textarea {
+  font-family: inherit;
+}
+
+/*A card selected for moving should have a 2px solid black border*/
+.moving {
+  border: 2px solid black;
+}
+
+/*Make the text box for editing descriptions expand to the full width of the page, 
+have a height of 5 times the font size, and have the same background color as the rest of the card*/
+.editDescription {
+  background-color: transparent;
+  width: 100%;
+  box-sizing: border-box;
+  height: calc(5 * 1rem);
+  white-space: pre-wrap;
+}
+
+/* make sure descripion persists with the same spacing as its text box*/
+.description {
+  width: 100%;
+  box-sizing: border-box;
+  white-space: pre-wrap;
+}
+
+/*The card buttons (edit, move, delete) should use the card's background color and have no border. When the user moves their mouse over the buttons, their cursor should change to a "pointer" hand, and the button's background should become translucent (use rgba(0, 0, 0, 0.25) as the color).*/
+.buttons .edit,.startMove,.delete {
+  background-color: transparent;
+  border:none;
+  cursor:pointer;
+}
+
+.edit:hover,.startMove:hover,.delete:hover {
+  background-color: rgba(0, 0, 0, 0.25);
+  cursor: hand;
+}
+
+
+/* Similar to the card buttons, these should also have no background/border and use the pointer hand cursor. They should also use a small font size. When not hovered, their text color should be gray. When hovered, they get a #e0e0e0 background and their text becomes its normal color (black).
+*/
+.moveButton{
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: gray;
+  font-size: small;
+}
+
+.moveButton:hover{
+  background-color: #e0e0e0;
+  color: black;
+  cursor: hand;
+}
+
+* {
+  box-sizing: inherit;
+}
+
+.template, .hidden {
+  display: none;
+}
+
+

@@ -1,0 +1,45 @@
+GET /
+-----
+Test endpoint. Always returns the same thing.
+
+GET /students
+-------------
+Query string:
+  q (optional): search string
+Return a list of students, optionally whose names contain the search string.
+
+GET /students/:id
+-----------------
+Parameters:
+  id: student ID
+Errors
+  404: id doesn't match a student in the system
+Return the student object with the given ID.
+
+GET /students/:id/courses
+-----------------
+Parameters:
+  id: student ID
+Errors
+  404: id doesn't match a student in the system
+Return a list of courses the student has taken
+
+PATCH /students/:id
+-------------------
+Parameters:
+  id: student ID
+Reuqest body:
+  An Object with keys dept and unitsCompleted, both optional.
+  dept can either be the department name or code
+Update the student with the given ID. Properties not included in the request body are unchanged. (Properties not listed above cannot be changed.)
+Returns the updated student object, in the same format as `GET /students/:id`.
+
+POST /students/:id/graduate
+-------------------------
+Parameters:
+  id: student ID
+Errors:
+  400: Student isn't declared or doesn't have enough units
+Graduate a student (mark them as an alum), if the student is declared and has enough units.
+On success, returns the object `{ "success": true }`.
+
